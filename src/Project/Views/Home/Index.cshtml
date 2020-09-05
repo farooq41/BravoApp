@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home";
+}
+@section Heading{
+    <p>Welcome to the C# Technical Test.</p>
+    <p>This test consists of a number of tasks outlined below that can be completed in any order. You do not have to complete all tasks.</p>
+    <p>Once complete, please .zip your submission with any notes or relevant comments and send it back.</p>
+}
+<div class="container">
+    <div class="card-columns">
+        @await Html.PartialAsync("_task1")
+        @await Html.PartialAsync("_task2")
+        @await Html.PartialAsync("_task3")
+        @await Html.PartialAsync("_task4")
+        @await Html.PartialAsync("_task5")
+    </div>
+</div>
+

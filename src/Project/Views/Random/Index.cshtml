@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Random Num Generator";
+}
+
+@section Heading{
+    <div>
+        <h4>GenerateRandomNumber</h4>
+        <dl class="row">
+        </dl>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Generate", "GenerateRandomNumber")
+    @if (ViewData["Random"] != null)
+    {
+        <div> Random Number is :  @ViewData["Random"] </div>
+    }
+
+</div>

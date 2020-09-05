@@ -1,0 +1,38 @@
+﻿@model Project.Models.EventModel
+@{
+    Layout = "../Shared/_Layout.cshtml";
+    ViewBag.Title = "List of Events";
+}
+
+@section Heading{
+    <h4>Events</h4>
+}
+
+<form action="/EventPost" method="post">
+    <div class="container">
+        <div class="form-check">
+
+            @Html.CheckBoxFor(m => m.isRandom, new { @class = "form-check-input", @id = "isRandom" })
+            <label for="isRandom" class="form-check-label">Random Events</label>
+        </div>
+        <input type="submit" value="GetEvents" />
+    </div>
+    <div class="container" style="margin-top:15px;">
+        <div class="card-columns">
+
+            <div>
+                @*@Html.ActionLink("GetEvents", "", null, new { }, new { id = "GetEvent" })*@
+                @foreach (var ev in Model.Event)
+                {
+                    <div class="card">
+                        <img src="@ev.ImgUrlDesktop" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@ev.Title</h5>
+                            <p class="card-text">@ev.Description</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</form>
